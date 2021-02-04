@@ -48,7 +48,7 @@ setup(
             'src/deform_conv_kernel.cu',],
             include_dirs=[os.path.join(base_path, 'src')],
             extra_compile_args={
-                'cxx': [],
+                'cxx': ['-fopenmp'],
                 'nvcc': ['-O2']}
         ),
     ],
