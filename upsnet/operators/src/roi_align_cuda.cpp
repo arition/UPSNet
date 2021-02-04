@@ -63,7 +63,7 @@ int roi_align_forward_cuda(
   // Number of channels
   int num_channels = features.size(1);
 
-  cudaStream_t stream = THCState_getCurrentStream(state);
+  cudaStream_t stream = at::cuda::getCurrentCUDAStream().stream();
 
   roi_align_forward_gpu_kernel_launcher(
       stream, data_flat, spatial_scale, num_rois, 
@@ -100,7 +100,7 @@ int roi_align_backward_cuda(
   // Number of channels
   int num_channels = bottom_grad.size(1);
 
-  cudaStream_t stream = THCState_getCurrentStream(state);
+  cudaStream_t stream = at::cuda::getCurrentCUDAStream().stream();
   roi_align_backward_gpu_kernel_launcher(
       stream, top_grad_flat, spatial_scale, batch_size,
       num_rois, data_height, data_width, num_channels, 

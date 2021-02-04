@@ -53,7 +53,7 @@ int modulated_deformable_im2col_cuda(
   vector<int> im_shape, vector<int> col_shape, vector<int> kernel_shape, vector<int> pad, vector<int> stride, vector<int> dilation,
   const uint32_t deformable_group, at::Tensor data_col_cuda) {
 
-  cudaStream_t stream = THCState_getCurrentStream(state);
+  cudaStream_t stream = at::cuda::getCurrentCUDAStream().stream();
 
   float* data_im     = data_im_cuda.data<float>();
   float* data_offset = data_offset_cuda.data<float>();
@@ -72,7 +72,7 @@ int modulated_deformable_col2im_cuda(
   vector<int> im_shape, vector<int> col_shape, vector<int> kernel_shape, vector<int> pad, vector<int> stride, vector<int> dilation,
   const uint32_t deformable_group, at::Tensor grad_im_cuda) {
 
-  cudaStream_t stream = THCState_getCurrentStream(state);
+  cudaStream_t stream = at::cuda::getCurrentCUDAStream().stream();
 
   float* data_col    = data_col_cuda.data<float>();
   float* data_offset = data_offset_cuda.data<float>();
@@ -91,7 +91,7 @@ int modulated_deformable_col2im_coord_cuda(
   vector<int> im_shape, vector<int> col_shape, vector<int> kernel_shape, vector<int> pad, vector<int> stride, vector<int> dilation,
   const uint32_t deformable_group, at::Tensor grad_offset_cuda, at::Tensor grad_mask_cuda) {
 
-  cudaStream_t stream = THCState_getCurrentStream(state);
+  cudaStream_t stream = at::cuda::getCurrentCUDAStream().stream();
 
   float* data_col    = data_col_cuda.data<float>();
   float* data_im     = data_im_cuda.data<float>();
