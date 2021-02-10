@@ -8,7 +8,7 @@ fi
 
 # Install essential python packages
 
-pip3 install pyyaml pycocotools
+python3 -m pip install pyyaml pycocotools
 
 # Download panopticapi devkit
 git clone https://github.com/cocodataset/panopticapi lib/dataset_devkit/panopticapi
@@ -23,9 +23,3 @@ cd ../nms; python3 setup.py build_ext --inplace
 cd ../operators
 python3 build_deform_conv.py build_ext --inplace 
 python3 build_roialign.py build_ext --inplace
-
-
-
-
-
-

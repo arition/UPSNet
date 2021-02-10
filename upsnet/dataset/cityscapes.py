@@ -59,7 +59,7 @@ class Cityscapes(BaseDataset):
         }
 
         self.panoptic_json_file = os.path.join(config.dataset.dataset_path, 'annotations', 'cityscapes_fine_val.json')
-        self.panoptic_gt_folder = 'data/cityscapes/panoptic'
+        self.panoptic_gt_folder = '/mnt/data/cityscapes/panoptic'
 
         self.flip = flip
         self.result_path = result_path
@@ -70,7 +70,7 @@ class Cityscapes(BaseDataset):
         if image_sets[0] == 'demoVideo':
             assert len(image_sets) == 1
             assert phase == 'test'
-            im_path = [_.strip() for _ in open('data/cityscapes/split/demoVideo_img.txt', 'r').readlines()]
+            im_path = [_.strip() for _ in open('/mnt/data/cityscapes/split/demoVideo_img.txt', 'r').readlines()]
             self.roidb = [{'image': _, 'flipped': False} for _ in im_path]
             return
 
