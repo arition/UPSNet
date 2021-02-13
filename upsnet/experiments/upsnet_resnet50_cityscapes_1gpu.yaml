@@ -1,5 +1,5 @@
 ---
-output_path: "./output/upsnet/cityscapes"
+output_path: "/ceph/checkpoints/upsnet/cityscapes"
 model_prefix: "upsnet_resnet_50_cityscapes_"
 symbol: resnet_50_upsnet
 gpus: '0'
@@ -13,6 +13,7 @@ dataset:
   test_image_set: val
 
 network:
+  use_pretrained: false
   has_rpn: true
   has_rcnn: true
   has_mask_head: true
@@ -20,7 +21,7 @@ network:
   fcn_head: "FCNHead"
   fcn_num_layers: 2
   has_panoptic_head: true
-  pretrained: "./model/pretrained_model/resnet-50-caffe.pth"
+  # pretrained: "./model/pretrained_model/resnet-50-caffe.pth"
   
 
 train:
