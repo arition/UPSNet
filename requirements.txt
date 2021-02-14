@@ -1,0 +1,6 @@
+tensorboardX
+tensorboard
+cv2
+numpy
+Pillow
+scipy
