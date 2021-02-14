@@ -13,7 +13,6 @@ dataset:
   test_image_set: val
 
 network:
-  use_pretrained: false
   has_rpn: true
   has_rcnn: true
   has_mask_head: true
@@ -21,7 +20,7 @@ network:
   fcn_head: "FCNHead"
   fcn_num_layers: 2
   has_panoptic_head: true
-  # pretrained: "./model/pretrained_model/resnet-50-caffe.pth"
+  pretrained: "./model/pretrained_model/resnet-50-caffe.pth"
   
 
 train:
