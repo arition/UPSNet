@@ -1,6 +1,7 @@
 tensorboardX
-tensorboard
-cv2
+opencv-python
 numpy
 Pillow
 scipy
+networkx
+easydict
