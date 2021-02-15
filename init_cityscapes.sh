@@ -3,21 +3,21 @@ git clone https://github.com/mcordts/cityscapesScripts lib/dataset_devkit/citysc
 
 # Download coco format anntations
 
-mkdir -p data/cityscapes/annotations
+mkdir -p /mnt/data/cityscapes/annotations
 
-if [ ! -f data/cityscapes/annotations/instancesonly_gtFine_train.json ]; then
-    curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/instancesonly_gtFine_train.json -o data/cityscapes/annotations/instancesonly_gtFine_train.json
+if [ ! -f /mnt/data/cityscapes/annotations/instancesonly_gtFine_train.json ]; then
+    curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/instancesonly_gtFine_train.json -o /mnt/data/cityscapes/annotations/instancesonly_gtFine_train.json
 fi
 
-if [ ! -f data/cityscapes/annotations/instancesonly_gtFine_val.json ]; then
-    curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/instancesonly_gtFine_val.json -o data/cityscapes/annotations/instancesonly_gtFine_val.json
+if [ ! -f /mnt/data/cityscapes/annotations/instancesonly_gtFine_val.json ]; then
+    curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/instancesonly_gtFine_val.json -o /mnt/data/cityscapes/annotations/instancesonly_gtFine_val.json
 fi
 
-if [ ! -f data/cityscapes/annotations/cityscapes_fine_val.json ]; then
-    curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/cityscapes_fine_val.json -o data/cityscapes/annotations/cityscapes_fine_val.json
+if [ ! -f /mnt/data/cityscapes/annotations/cityscapes_fine_val.json ]; then
+    curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/cityscapes_fine_val.json -o /mnt/data/cityscapes/annotations/cityscapes_fine_val.json
 fi
 
-cd data/cityscapes
+cd /mnt/data/cityscapes
 
 if [ ! -d images ]; then
     mkdir images
@@ -27,7 +27,7 @@ fi
 
 if [ ! -d labels ]; then
     mkdir labels
-    cp gtFine/*/*/*labelTrainIds.png labels
+    cp gtFine/*/*/*labelIds.png labels
 fi
 
 if [ ! -d panoptic ]; then

@@ -1,0 +1,9 @@
+tensorboardX
+opencv-python
+numpy
+Pillow
+scipy
+networkx
+easydict
+pyyaml
+pycocotools
