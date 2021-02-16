@@ -53,7 +53,7 @@ class RPN(nn.Module):
         x = self.conv_proposal(data)
         cls_score = self.cls_score(x)
         bbox_pred = self.bbox_pred(x)
-        cls_prob = F.sigmoid(cls_score)
+        cls_prob = torch.sigmoid(cls_score)
         return cls_score, bbox_pred, cls_prob
 
 
