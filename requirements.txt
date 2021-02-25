@@ -1,5 +1,5 @@
 numpy
-torch==0.4.1post2
+torch==0.4.1
 tensorboardX
 opencv-python
 Pillow
