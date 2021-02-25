@@ -21,13 +21,13 @@ cd /mnt/data/cityscapes
 
 if [ ! -d images ]; then
     mkdir images
-    cp leftImg8bit/*/*/*.png images
+    cp leftImg8bit/train/*/*.png images
 fi
 
 
 if [ ! -d labels ]; then
     mkdir labels
-    cp gtFine/*/*/*labelIds.png labels
+    cp gtFine/train/*/*labelTrainIds.png labels
 fi
 
 if [ ! -d panoptic ]; then

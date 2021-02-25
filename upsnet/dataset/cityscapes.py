@@ -165,7 +165,7 @@ class Cityscapes(BaseDataset):
                 label = None
         if config.network.has_fcn_head:
             if self.phase != 'test':
-                seg_gt = np.array(Image.open(self.roidb[index]['image'].replace('images', 'labels').replace('leftImg8bit.png', 'gtFine_labelIds.png')))
+                seg_gt = np.array(Image.open(self.roidb[index]['image'].replace('images', 'labels').replace('leftImg8bit.png', 'gtFine_labelTrainIds.png')))
                 if self.roidb[index]['flipped']:
                     seg_gt = np.fliplr(seg_gt)
                 seg_gt = cv2.resize(seg_gt, None, None, fx=im_scales[0], fy=im_scales[0], interpolation=cv2.INTER_NEAREST)
@@ -448,10 +448,10 @@ class Cityscapes(BaseDataset):
         confusion_matrix = np.zeros((config.dataset.num_seg_classes, config.dataset.num_seg_classes))
         for i, roidb in enumerate(self.roidb):
 
-            seg_gt = np.array(Image.open(roidb['image'].replace('images', 'labels').replace('leftImg8bit.png', 'gtFine_labelIds.png'))).astype('float32')
+            seg_gt = np.array(Image.open(roidb['image'].replace('images', 'labels').replace('leftImg8bit.png', 'gtFine_labelTrainIds.png'))).astype('float32')
 
-            seg_pathes = os.path.split(roidb['image'].replace('images', 'labels').replace('leftImg8bit.png', 'gtFine_labelIds.png'))
-            res_image_name = seg_pathes[-1][:-len('_gtFine_labelIds.png')]
+            seg_pathes = os.path.split(roidb['image'].replace('images', 'labels').replace('leftImg8bit.png', 'gtFine_labelTrainIds.png'))
+            res_image_name = seg_pathes[-1][:-len('_gtFine_labelTrainIds.png')]
             res_save_path = os.path.join(res_file_folder, res_image_name + '.png')
 
             seg_pred = Image.open(res_save_path)

@@ -1,9 +1,11 @@
+numpy
+torch==0.4.1post2
 tensorboardX
 opencv-python
-numpy
 Pillow
 scipy
 networkx
 easydict
 pyyaml
 pycocotools
+cityscapesscripts
