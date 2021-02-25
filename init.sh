@@ -23,9 +23,3 @@ cd ../nms; python setup.py build_ext --inplace
 cd ../operators
 python build_deform_conv.py build_ext --inplace 
 python build_roialign.py build_ext --inplace
-
-
-
-
-
-

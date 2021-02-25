@@ -24,7 +24,6 @@ if [ ! -d images ]; then
     cp leftImg8bit/train/*/*.png images
 fi
 
-
 if [ ! -d labels ]; then
     mkdir labels
     cp gtFine/train/*/*labelTrainIds.png labels
@@ -34,4 +33,3 @@ if [ ! -d panoptic ]; then
     curl http://www.yuwenxiong.com/dataset/cityscapes/annotations/panoptic.zip -o panoptic.zip
     unzip -q panoptic.zip
 fi
-
